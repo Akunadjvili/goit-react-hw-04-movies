@@ -1,7 +1,6 @@
 import { React, lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import { Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from './components/Header';
 import Main from './components/Main';
@@ -36,7 +35,10 @@ const App = () => {
                   component={MovieDetailsPage}
                 />
                 <Route path={routes.movies} component={MoviesPage} />
-                <Route component={HomePage} />
+                {/* <Route component={HomePage} /> */}
+                <Route
+                  render={() => <Redirect to={{ pathname: routes.home }} />}
+                />
               </Switch>
             </Suspense>
           </Container>

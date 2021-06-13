@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
 import { Switch } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+
 import styles from './MovieDetailsPage.module.css';
 
 import MovieCard from './../../components/MovieCard';
@@ -16,11 +17,15 @@ import routes from './../../routes';
 
 class MovieDetailsPage extends Component {
   state = { movie: {}, loading: false };
-  // static defaultProps = {};
+  static defaultProps = {};
 
-  // static propTypes = {
-  //   test: PropTypes.string.isRequired,
-  // };
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        movieId: PropTypes.string.isRequired,
+      }),
+    }),
+  };
 
   loading = state => {
     this.setState({ loading: state });
@@ -31,13 +36,11 @@ class MovieDetailsPage extends Component {
 
     try {
       this.loading(true);
-      // this.setState({ loading: true });
       this.setState({ movie: await searchMovieById(movieId) });
     } catch (error) {
       console.log(error);
     } finally {
       this.loading(false);
-      // this.setState({ loading: false });
     }
   }
 
@@ -63,7 +66,6 @@ class MovieDetailsPage extends Component {
 
     return (
       <>
-        {' '}
         <div className={styles.MovieDetailsPage}>
           <div className={styles.MovieDetailsPage__navigation}>
             <button
@@ -84,10 +86,12 @@ class MovieDetailsPage extends Component {
           <MovieAdditionalLinks />
           <Switch>
             <Route
+              exact
               path={`${url}${routes.cast}`}
               render={() => <Cast movieId={id} onLoading={this.loading} />}
             />
             <Route
+              exact
               path={`${url}${routes.reviews}`}
               render={() => <Reviews movieId={id} onLoading={this.loading} />}
             />
