@@ -98,4 +98,7 @@ This section has moved here:
 npm install mrm mrm-task-lint-staged --save-dev
 npx mrm lint-staged
 npm uninstall mrm mrm-task-lint-staged
+
+npm install netlify-cli -g
 ```
+"homepage": "https://akunadjvili.github.io/goit-react-hw-04-movies",
