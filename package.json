@@ -55,7 +55,6 @@
     "modern-normalize": "^1.1.0",
     "mrm": "^3.0.2",
     "mrm-task-lint-staged": "^6.0.0",
-    "netlify-cli": "^3.37.16",
     "node-sass": "^6.0.0",
     "prettier": "^2.3.0",
     "prop-types": "^15.7.2",
