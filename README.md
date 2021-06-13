@@ -102,3 +102,5 @@ npm uninstall mrm mrm-task-lint-staged
 npm install netlify-cli -g
 ```
 "homepage": "https://akunadjvili.github.io/goit-react-hw-04-movies",
+
+    "deploy": "gh-pages -d build",
