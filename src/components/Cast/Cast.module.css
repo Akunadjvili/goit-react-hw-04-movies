@@ -1,0 +1,29 @@
+.Cast {
+  margin-top: 15px;
+  box-shadow: 0 0 5px 5px #d3d3d3;
+  padding: 20px 10px;
+}
+.Cast__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  list-style: none;
+  border: 1px solid coral;
+  border-radius: 5px;
+}
+.Cast__title {
+  margin-bottom: 10px;
+}
+
+.Cast_image {
+  min-width: 100px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  object-fit: cover;
+  object-position: center;
+}
+
+.Cast__item:not(:first-child) {
+  margin-top: 10px;
+}

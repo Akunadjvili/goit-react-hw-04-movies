@@ -1,0 +1,19 @@
+.MovieDetailsPage {
+}
+.MovieDetailsPage__navigation {
+  padding: 5px;
+}
+.MovieDetailsPage__back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  border-radius: 50px;
+  border: 1px solid coral;
+  background-color: #fff;
+  cursor: pointer;
+}
+.MovieDetailsPage__back:hover,
+.MovieDetailsPage__back:focus {
+  background-color: coral;
+}

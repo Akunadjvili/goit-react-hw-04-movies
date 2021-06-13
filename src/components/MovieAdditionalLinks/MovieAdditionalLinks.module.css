@@ -1,0 +1,19 @@
+.MovieAdditionalLinks {
+  margin-top: 15px;
+  box-shadow: 0 0 5px 5px #d3d3d3;
+  padding: 20px 10px;
+}
+.MovieAdditionalLinks__title {
+  margin-bottom: 10px;
+}
+.MovieAdditionalLinks__list {
+  padding-left: 50px;
+}
+
+.MovieAdditionalLinks__item:not(:first-child) {
+  margin-top: 10px;
+}
+
+.MovieAdditionalLinks__item--active {
+  color: coral;
+}

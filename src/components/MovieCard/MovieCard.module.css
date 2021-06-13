@@ -1,0 +1,21 @@
+.MovieCard {
+  display: flex;
+  box-shadow: 0 0 5px 5px #d3d3d3;
+  padding: 10px;
+}
+.MovieCard__image {
+  border: 1px solid black;
+  min-width: 200px;
+  margin-right: 20px;
+  object-position: center;
+  object-fit: cover;
+}
+.MovieCard__data {
+  flex-grow: 1;
+}
+.MovieCard__section {
+  padding: 20px 0;
+}
+.MovieCard__title {
+  margin-bottom: 10px;
+}

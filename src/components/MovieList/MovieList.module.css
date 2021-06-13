@@ -1,0 +1,26 @@
+.MovieList {
+  margin-top: 15px;
+  box-shadow: 0 0 5px 5px #d3d3d3;
+  padding: 20px 10px;
+}
+.MovieList__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid coral;
+  list-style: none;
+}
+.MovieList__item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.MovieList__image {
+  width: 50px;
+}
+
+.MovieList__title {
+  margin-left: 20px;
+  font-size: 20px;
+}

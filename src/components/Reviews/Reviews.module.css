@@ -1,0 +1,18 @@
+.Reviews {
+  margin-top: 15px;
+  box-shadow: 0 0 5px 5px #d3d3d3;
+  padding: 20px 10px;
+}
+.Reviews__item {
+  padding: 10px;
+  list-style: none;
+  border: 1px solid coral;
+  border-radius: 5px;
+}
+.Reviews__author {
+  margin-bottom: 10px;
+}
+
+.Reviews__item:not(:first-child) {
+  margin-top: 10px;
+}

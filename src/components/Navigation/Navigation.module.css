@@ -1,0 +1,21 @@
+.Navigation {
+  display: flex;
+  /* justify-content: space-between; */
+  /* background-color: green; */
+}
+.Navigation__item {
+  /* background-color: blue; */
+  font-size: 20px;
+  list-style: none;
+}
+.Navigation__item:not(:first-child) {
+  margin-left: 10px;
+}
+
+.Navigation__item--active {
+  color: coral;
+}
+
+.Navigation__item--normal {
+  color: inherit;
+}
