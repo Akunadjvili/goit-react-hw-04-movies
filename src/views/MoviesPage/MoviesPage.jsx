@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { withRouter } from 'react-router-dom';
 
 // import PropTypes from 'prop-types';
@@ -10,10 +10,16 @@ import Searchbar from './../../components/Searchbar';
 import MovieList from './../../components/MovieList';
 import { searchMovies } from './../../api/apiService';
 
-class MoviesPage extends Component {
+class MoviesPage extends PureComponent {
   state = { movies: [], search: '', loading: false };
-
+  loadSearch = '';
   getSearchFromProps = props => queryString.parse(props.location.search).search;
+
+  constructor(props) {
+    super(props);
+    const search = queryString.parse(props.location.search).search || '';
+    this.loadSearch = search;
+  }
 
   async componentDidUpdate(prevProps, { search }) {
     const prevSearch = this.getSearchFromProps(prevProps);
@@ -58,7 +64,7 @@ class MoviesPage extends Component {
     return (
       <>
         <div className={styles.MoviesPage}>
-          <Searchbar onSubmit={this.onQueryChange} />
+          <Searchbar onSubmit={this.onQueryChange} init={this.loadSearch} />
           {movies.length ? <MovieList movies={movies} /> : null}
         </div>
         {loading && <Loader />}

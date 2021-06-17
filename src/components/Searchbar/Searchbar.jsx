@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Searchbar.module.css';
 
-class Searchbar extends Component {
+class Searchbar extends PureComponent {
   static defaultProps = { onSubmit: () => {} };
   static propTypes = { onSubmit: PropTypes.func };
   state = {
-    query: '',
+    query: this.props.init || '',
   };
+
   updateFields = ({ currentTarget: { name, value } }) => {
     this.setState(state => {
       return { [name]: value };
@@ -18,9 +19,7 @@ class Searchbar extends Component {
     const { onSubmit } = this.props;
     const { query } = this.state;
     event.preventDefault();
-
     onSubmit(query);
-    // this.setState({ query: '' });
   };
 
   render() {

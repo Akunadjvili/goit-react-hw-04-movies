@@ -9,6 +9,7 @@ class MovieAdditionalLinks extends Component {
   render() {
     const {
       match: { url },
+      location,
     } = this.props;
     // console.log(this.props);
     return (
@@ -20,7 +21,10 @@ class MovieAdditionalLinks extends Component {
           <li className={styles.MovieAdditionalLinks__item}>
             <NavLink
               exact
-              to={`${url}${routes.cast}`}
+              to={{
+                pathname: `${url}${routes.cast}`,
+                state: { from: location },
+              }}
               activeClassName={styles['MovieAdditionalLinks__item--active']}
             >
               Cast
@@ -29,7 +33,10 @@ class MovieAdditionalLinks extends Component {
           <li className={styles.MovieAdditionalLinks__item}>
             <NavLink
               exact
-              to={`${url}${routes.reviews}`}
+              to={{
+                pathname: `${url}${routes.reviews}`,
+                state: { from: location },
+              }}
               activeClassName={styles['MovieAdditionalLinks__item--active']}
             >
               Reviews
